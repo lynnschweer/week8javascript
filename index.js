@@ -4,8 +4,8 @@
 //Your menu should have the options to create, view, and delete elements.
 
 
-
 class Car {
+    //constructor creates and initializes an instance of a class
     constructor(make, model) {
         this.make = make;
         this.model = model;
@@ -30,6 +30,7 @@ class Menu {
         // Ensure the index is a number and within bounds
         carIndex = parseInt(carIndex);
         if (carIndex >= 0 && carIndex < this.cars.length) {
+            //starting index and # of elements to remove
             this.cars.splice(carIndex, 1);
         } else {
             alert("Invalid index.");
@@ -40,6 +41,7 @@ class Menu {
     viewCars() {
         let displayCars = "";
         for (let i = 0; i < this.cars.length; i++) {
+            //template literals
             displayCars += `${i}: ${this.cars[i].make} ${this.cars[i].model}\n`;
         }
         alert(displayCars);
